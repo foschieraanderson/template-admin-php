@@ -42,6 +42,13 @@ div.box-login h1 {
     font-size: 22px;
 }
 
+div.box-login small {
+    color: #f1f1f1;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
 div.box-login form {
     margin-top: 20px;
 
@@ -49,7 +56,7 @@ div.box-login form {
     flex-direction: column;
 }
 
-div.box-login form input {
+div.box-login form input[type=email], div.box-login form input[type=password] {
     background-color: #464646;
     color: #f1f1f1;
     height: 40px;
@@ -60,8 +67,7 @@ div.box-login form input {
     font-size: 14px;
 }
 
-div.box-login form button {
-    border: none;
+div.box-login form input[type=submit] {
     background-color: #06167A;
     color: #f1f1f1;
     cursor: pointer;
