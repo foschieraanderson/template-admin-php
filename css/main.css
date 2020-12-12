@@ -13,6 +13,19 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+div.erro {
+    background-color: #E06158;
+    border-radius: 5px;
+    max-width: 100%;
+    padding: 8px;
+}
+
+div.erro p {
+    color: #BD2F27;
+    font-family 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
 section.container {
     outline: 1px solid red;
     width: 100%;
@@ -79,7 +92,7 @@ div.box-login form input[type=submit] {
     font-size: 16px;
 }
 
-div.box-login form button:hover {
+div.box-login form input[type=submit]:hover {
     opacity: 0.8;
     transition: opacity 0.5s;
 }

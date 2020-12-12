@@ -5,8 +5,9 @@ include_once 'path.php';
 
 if(isset($_POST['submit'])) {
 
-    $email    = $_POST['email'];
+    $email    = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
     $password = $_POST['password'];
+    //$pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $sql = $pdo->prepare("SELECT * FROM tb_users WHERE email = ?");
     $sql->execute([$email]);
@@ -25,14 +26,13 @@ if(isset($_POST['submit'])) {
 
             die();
         } else {
-            echo 'Usuário ou senha incorretos!';
+            header('Location: '.$path.'login.php?erro=2');
         }
     } else {
-        echo 'Usuário não encontrado';
+        header('Location: '.$path.'login.php?erro=1');
     } 
 } else {
-    echo 'Sem post submit';
+    header('Location: '.$path.'login.php?erro=0');
 }
        
-
 ?>
