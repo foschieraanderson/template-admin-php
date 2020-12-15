@@ -7,15 +7,11 @@ if(isset($_POST['submit'])) {
 
     $email    = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
     $password = $_POST['password'];
-    //$pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $sql = $pdo->prepare("SELECT * FROM tb_users WHERE email = ?");
     $sql->execute([$email]);
     if($sql->rowCount() == 1) {
         $info = $sql->fetch();
-
-        print "Usuário do banco: " . $info['password'];
-        print "Usuário postado: " . $password;
 
         if(password_verify($password, $info['password'])) {
             $_SESSION['login'] = true;
