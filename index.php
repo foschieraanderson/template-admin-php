@@ -1,7 +1,8 @@
 <?php
-    include_once 'includes/conn.php';
-    include_once 'includes/authenticate.php';
+    require_once 'lib/database/connection.php';
+    require_once 'lib/validate/validate.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,6 +11,7 @@
     <title>Painel Administrativo</title>
 </head>
 <body>
-    <h1>Bem vindo, <?php echo $_SESSION['user'] ?></h1>
+
+    <h1>Bem vindo, <?php $_SESSION['email']; ?></h1>
 </body>
 </html>

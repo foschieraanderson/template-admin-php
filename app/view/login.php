@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'includes/path.php';
+    require_once '../../lib/path/path.php';
 
     if(isset($_SESSION['login']) && $_SESSION['login'] == true) {
         header('Location: '.$path.'index.php');
@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="<?php echo $path; ?>public/css/main.css">
 </head>
 <body>
     <section class="container">
@@ -39,7 +39,7 @@
                         <p><?php echo $msg; ?></p>
                     </div>
             <?php } ?>
-            <form class="login" action="includes/login.php" method="POST">
+            <form class="login" action="<?php echo $path; ?>app/controller/UserController.php" method="POST">
                 <input type="email" name="email" placeholder="E-mail">
                 <input type="password" name="password" placeholder="Senha">
                 <input type="submit" value="Entrar" name="submit">

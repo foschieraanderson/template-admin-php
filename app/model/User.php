@@ -4,9 +4,9 @@
 
     class User
     {
-        private $name;
-        private $email;
-        private $password;
+        public $name;
+        public $email;
+        public $password;
 
         public function validateLogin() {
             $conn = Connection::getConn();
@@ -20,7 +20,8 @@
             if($stmt->rowCount() == 1) {
                 $result = $stmt->fetch();
 
-                if($result['password'] === $this->password) {
+                if($result['password'] == $this->password) {
+                    session_start();
                     $_SESSION['login'] = true;
                     $_SESSION['id']    = $result['user_id'];
                     $_SESSION['email'] = $result['email'];
@@ -32,8 +33,8 @@
 
             throw new Exception('E-mail ou senha inválidos');
         }
-
-        public function setName($name) {
+        // Métodos SET
+        public function setNome($name){
             $this->name = $name;
         }
 
@@ -44,7 +45,7 @@
         public function setPassword($password) {
             $this->password = $password;
         }
-
+        // Métodos GET
         public function getName() {
             return $this->name;
         }
