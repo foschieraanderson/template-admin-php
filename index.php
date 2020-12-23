@@ -11,7 +11,6 @@
     <title>Painel Administrativo</title>
 </head>
 <body>
-
-    <h1>Bem vindo, <?php $_SESSION['email']; ?></h1>
+    <?php include 'app/view/header.php'; ?>
 </body>
 </html>
