@@ -11,6 +11,7 @@
     <title>Painel Administrativo</title>
 </head>
 <body>
+    <?php include 'app/view/menu.php'; ?>
     <?php include 'app/view/header.php'; ?>
 </body>
 </html>
