@@ -20,6 +20,10 @@ div.erro {
     padding: 8px;
 }
 
+
+/* =====================================
+ *  PAGE LOGIN
+ * =====================================*/
 div.erro p {
     color: #BD2F27;
     font-family 'Roboto', sans-serif;
@@ -95,4 +99,15 @@ div.box-login form input[type=submit] {
 div.box-login form input[type=submit]:hover {
     opacity: 0.8;
     transition: opacity 0.5s;
+}
+
+
+/*====================================
+ * PAGE DASHBOARD
+ * ===================================*/
+
+div.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
